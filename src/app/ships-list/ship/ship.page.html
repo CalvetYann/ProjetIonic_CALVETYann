@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/ships"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>Ship</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="editShip()">Toggle edit</ion-button>
+  <div *ngIf="!edit">Details</div> 
+  <div *ngIf="edit">Editable</div>
+</ion-content>

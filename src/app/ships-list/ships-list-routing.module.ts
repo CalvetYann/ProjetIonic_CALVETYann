@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: ShipsListPage
+  },
+  {
+    path: 'new',
+    loadChildren: () => import('./ship-new/ship-new.module').then( m => m.ShipNewPageModule)
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./ship/ship.module').then( m => m.ShipPageModule)
   }
 ];
 

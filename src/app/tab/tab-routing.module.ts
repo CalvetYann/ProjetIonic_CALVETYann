@@ -6,19 +6,27 @@ import { TabPage } from './tab.page';
 const routes: Routes = [
 
   {
-    path: 'tab',
+    path: 'tabs',
     component: TabPage,
 
     children: [
       {
         path: 'home',
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule),
+      },
+      {
+        path: 'ships',
+        loadChildren: () => import('../ships-list/ships-list.module').then(m => m.ShipsListPageModule),
+      },
+      {
+        path: 'brands',
+        loadChildren: () => import('../brands-list/brands-list.module').then( m => m.BrandsListPageModule)
       }
     ]
   },
 {
   path: '',
-  redirectTo:'/tab/home',
+  redirectTo:'/tabs/home',
   pathMatch:'full'
 },
 ];
