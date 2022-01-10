@@ -1,7 +1,0 @@
-{
-  "name": "PaysDuMonde",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
