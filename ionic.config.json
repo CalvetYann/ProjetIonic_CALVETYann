@@ -1,0 +1,7 @@
+{
+  "name": "SC-Ships",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
