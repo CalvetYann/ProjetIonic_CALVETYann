@@ -30,4 +30,31 @@ export class ShipsService {
         )
       );
   }
+
+  getShip(id: string): any {
+    return new Observable((obs) => {
+      this.shipsRef.doc(id).get().subscribe((data) => {
+        obs.next({ id: data.id, ...data.data()});
+      });
+    });
+  }
+
+  addShip(ship: Ships): any {
+    return new Observable((obs) => {
+      this.shipsRef.add({ ...ship}).then(() => {
+        obs.next();
+      });
+    });
+  }
+
+  updateShip(ship: Ships): any {
+    return new Observable((obs) => {
+      this.shipsRef.doc(ship.id).update(ship);
+      obs.next();
+    });
+  }
+
+  deleteShip(id: string): any {
+    this.shipsRef.doc(id).delete();
+  }
 }

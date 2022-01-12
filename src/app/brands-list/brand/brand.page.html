@@ -1,9 +1,122 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>brand</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/brands"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="brand">{{ brand.brandName }}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+      <ion-segment-button value="view">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <ion-label *ngIf="!edit">View brand</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="edit">
+        <ion-icon name="hammer-outline"></ion-icon>
+        <ion-label *ngIf="edit">Edit</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div *ngIf="!edit && brand">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ brand.brandName }}</ion-card-title>
+        <ion-card-subtitle>
+          <ion-badge color="primary">{{ brand.brandCode }}</ion-badge>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <img [src]="brand.brandLogo">
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Founded in</ion-label>
+                <ion-input disabled value="{{ brand.brandFounded }}"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Made by</ion-label>
+                <ion-input disabled value="{{ brand.brandRace }}"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-title>Industry</ion-title>
+              <ion-item>
+                <ion-text>{{ brand.brandIndus }}</ion-text>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-title>Products</ion-title>
+              <ion-item>
+                <ion-text>{{ brand.brandProducts }}</ion-text>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-title>Brand description</ion-title>
+              <ion-item>
+                <ion-text>{{ brand.brandDesc }}</ion-text>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
+  <div *ngIf="edit && brand">
+    <ion-item>
+      <ion-label>Logo</ion-label>
+      <ion-input type="text" [(ngModel)]="brand.brandLogo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="brand.brandName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Code</ion-label>
+      <ion-input type="text" [(ngModel)]="brand.brandCode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Race</ion-label>
+      <ion-input type="text" [(ngModel)]="brand.brandRace"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Industry</ion-label>
+      <ion-input type="text" [(ngModel)]="brand.brandIndus"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Products</ion-label>
+      <ion-input type="text" [(ngModel)]="brand.brandProducts"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Year Founded</ion-label>
+      <ion-input type="text" [(ngModel)]="brand.brandFounded"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea rows="10" [(ngModel)]="brand.brandDesc"></ion-textarea>
+    </ion-item>
+    <p>
+      <ion-button (click)="onEdit()">Save</ion-button>
+    </p>
+  </div>
 </ion-content>

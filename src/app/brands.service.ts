@@ -30,4 +30,31 @@ export class BrandsService {
         )
       );
   }
+
+  getBrand(id: string): any {
+    return new Observable((obs) => {
+      this.brandsRef.doc(id).get().subscribe((data) => {
+        obs.next({ id: data.id, ...data.data() });
+      });
+    });
+  }
+
+  addBrand(brand: Brands): any {
+    return new Observable((obs) => {
+      this.brandsRef.add({ ...brand}).then(() => {
+        obs.next();
+      });
+    });
+  }
+
+  updateBrand(brand: Brands): any {
+    return new Observable((obs) => {
+      this.brandsRef.doc(brand.id).update(brand);
+      obs.next();
+    });
+  }
+
+  deleteBrand(id: string): any {
+    this.brandsRef.doc(id).delete();
+  }
 }
