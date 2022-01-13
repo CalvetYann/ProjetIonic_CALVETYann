@@ -41,7 +41,10 @@
     <ion-textarea rows="20" [(ngModel)]="brand.brandDesc"></ion-textarea>
   </ion-item>
   <p class="text-center">
-    <ion-button (click)="add()">New brand</ion-button>
+    <ion-button expand="round" (click)="add()">
+      <ion-icon name="add"></ion-icon>
+      New brand
+    </ion-button>
   </p>
 </ion-content>
 

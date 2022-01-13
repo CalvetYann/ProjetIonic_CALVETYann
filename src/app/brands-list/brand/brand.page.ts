@@ -49,6 +49,7 @@ export class BrandPage implements OnInit {
         {
           text: 'Cancel',
           role: 'cancel',
+          handler: () => { this.segment = 'view'; }
         }, {
           text: 'Confirm',
           handler: () => { this.edit = !this.edit; }
@@ -102,7 +103,7 @@ export class BrandPage implements OnInit {
     if (ev.detail.value === 'edit') {
       this.setEditable();
     } else {
-      this.edit = !this.edit;
+      this.edit = false;
     }
   }
 

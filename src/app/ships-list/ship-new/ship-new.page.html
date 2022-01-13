@@ -53,7 +53,10 @@
     <ion-textarea rows="20" [(ngModel)]="ship.shipDesc"></ion-textarea>
   </ion-item>
   <p class="text-center">
-    <ion-button (click)="add()">New ship</ion-button>
+    <ion-button expand="round" (click)="add()">
+      <ion-icon name="add"></ion-icon> 
+      New ship
+    </ion-button>
   </p>
 </ion-content>
 
