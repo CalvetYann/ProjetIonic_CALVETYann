@@ -23,22 +23,16 @@
   <div *ngIf="!edit && ship" style="margin-bottom: 10px;">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>{{ ship.shipName }}</ion-card-title>
+        <ion-card-title *ngIf="ship.shipName">{{ ship.shipName }}</ion-card-title>
         <ion-card-subtitle>
-          <ion-badge color="primary">{{ ship.shipSize }}</ion-badge>
+          <ion-badge *ngIf="ship.shipSize" color="primary">{{ ship.shipSize }}</ion-badge>
           <ion-badge *ngIf="ship.shipFlightReady" color="success">Flyable</ion-badge>
           <ion-badge *ngIf="!ship.shipFlightReady" color="danger">Not flyable</ion-badge>
         </ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
+        <img *ngIf="ship.shipPicture" [src]="ship.shipPicture">
         <ion-grid>
-          <ion-row  *ngIf="ship.shipPicture">
-            <ion-col>
-              <ion-item>
-                <img [src]="ship.shipPicture">
-              </ion-item>
-            </ion-col>
-          </ion-row>
           <ion-row *ngIf="ship.brandName">
             <ion-col>
               <ion-item>
