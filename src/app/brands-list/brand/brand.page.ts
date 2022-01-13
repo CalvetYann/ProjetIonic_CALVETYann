@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { BrandsService } from 'src/app/brands.service';
+// import { SocialSharing } from '@awesome-cordova-plugins/social-sharing';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-brand',
@@ -18,7 +20,7 @@ export class BrandPage implements OnInit {
     private route: ActivatedRoute,
     private Brands: BrandsService,
     private toastCtrl: ToastController,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,15 @@ export class BrandPage implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.Brands.getBrand(id).subscribe((data: any) => {
       this.brand = data;
+    });
+  }
+
+  async share() {
+    await Share.share({
+      title: this.brand.brandName,
+      text: this.brand.brandDesc,
+      url: 'http://localhost:8100/tabs/brands/' + this.brand.id,
+      dialogTitle: 'Share this brand'
     });
   }
 

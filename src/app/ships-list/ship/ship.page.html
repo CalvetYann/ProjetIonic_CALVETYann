@@ -145,4 +145,9 @@
       <ion-button (click)="onEdit()">Save</ion-button>
     </p>
   </div>
+  <ion-fab *ngIf="!edit && ship" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="share()">
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

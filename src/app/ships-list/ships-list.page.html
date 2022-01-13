@@ -5,39 +5,22 @@
 </ion-header>
 
 <ion-content>
-  <h2>Add a new ship</h2>
-  <ion-button routerLink="/tabs/ships/new">Add</ion-button>
-  <h2>Ships</h2>
-  
+
+
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let ship of ships">
+      <ion-col size="12" *ngFor="let ship of ships">
         <ion-card routerLink="/tabs/ships/{{ship.id}}">
           <img [src]="ship.shipPicture" [alt]="ship.shipName">
+          <ion-card-title style="text-align: center;">{{ ship.shipName }}</ion-card-title>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-
-  <!-- <ion-slides>
-    <ion-slide *ngFor="let ship of ships">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>{{ship.shipName}}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <img src="{{ship.shipPicture}}" alt="{{ship.shipName}}">
-        </ion-card-content>
-        <ion-button routerLink="/tabs/ships/{{ship.id}}">View</ion-button>
-      </ion-card>
-    </ion-slide>
-  </ion-slides> -->
-  <!--
-    <ion-list>
-      <ion-item *ngFor="let ship of ships">
-        <ion-label>{{ ship.name }}</ion-label>
-      </ion-item>
-    </ion-list>
-  -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tabs/ships/new">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

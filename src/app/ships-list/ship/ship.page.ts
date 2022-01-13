@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ShipsService } from 'src/app/ships.service';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-ship',
@@ -27,6 +28,15 @@ export class ShipPage implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.Ships.getShip(id).subscribe((data: any) => {
       this.ship = data;
+    });
+  }
+
+  async share() {
+    await Share.share({
+      title: this.ship.shipName,
+      text: this.ship.shipDesc,
+      url: 'http://localhost:8100/tabs/ships/' + this.ship.id,
+      dialogTitle: 'Share this ship'
     });
   }
 
