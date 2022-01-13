@@ -74,6 +74,24 @@ export class BrandPage implements OnInit {
     });
   }
 
+  async confirmDelete(id: any) {
+    const alert = await this.alertCtrl.create({
+      header: 'Are you sure to delete this brand?',
+      subHeader: 'This action is irreversible',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+        }, {
+          text: 'Confirm',
+          handler: () => { this.onDelete(id); }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   onDelete(id: any) {
     this.Brands.deleteBrand(id);
     this.presentToast('Brand successfully deleted!');

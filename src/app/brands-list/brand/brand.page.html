@@ -20,7 +20,7 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="!edit && brand">
+  <div *ngIf="!edit && brand" style="margin-bottom: 10px;">
     <ion-card>
       <ion-card-header>
         <ion-card-title>{{ brand.brandName }}</ion-card-title>
@@ -80,7 +80,11 @@
         </ion-grid>
       </ion-card-content>
     </ion-card>
-  </div>
+    <ion-button expand="round" color="danger" (click)="confirmDelete(brand.id)">
+      <ion-icon name="remove"></ion-icon>
+      Remove
+    </ion-button>
+    </div>
 
   <div *ngIf="edit && brand">
     <ion-item>
@@ -116,12 +120,15 @@
       <ion-textarea rows="10" [(ngModel)]="brand.brandDesc"></ion-textarea>
     </ion-item>
     <p>
-      <ion-button (click)="onEdit()">Save</ion-button>
+      <ion-button expand="round" (click)="onEdit()">
+        <ion-icon name="hammer-outline"></ion-icon>
+        Save
+      </ion-button>
     </p>
   </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab *ngIf="!edit && brand" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="share()">
-      <ion-icon name="share"></ion-icon>
+      <ion-icon name="share-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

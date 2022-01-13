@@ -74,10 +74,28 @@ export class ShipPage implements OnInit {
     });
   }
 
+  async confirmDelete(id: any) {
+    const alert = await this.alertCtrl.create({
+      header: 'Are you sure to delete this ship?',
+      subHeader: 'This action is irreversible',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+        }, {
+          text: 'Confirm',
+          handler: () => { this.onDelete(id); }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   onDelete(id: any) {
     this.Ships.deleteShip(id);
     this.presentToast('Ship deleted successfully');
-    this.router.navigate(['/ships']);
+    this.router.navigate(['/tabs/ships']);
   }
 
   segmentChanged(ev: any) {
