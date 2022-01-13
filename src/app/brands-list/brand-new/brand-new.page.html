@@ -1,9 +1,47 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>brandNew</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/brands"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add a new brand</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-item>
+    <ion-label>Logo link</ion-label>
+    <ion-input type="text" [(ngModel)]="brand.brandLogo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="brand.brandName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Code</ion-label>
+    <ion-input type="text" [(ngModel)]="brand.brandCode"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Race</ion-label>
+    <ion-input type="text" [(ngModel)]="brand.brandRace"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Industry</ion-label>
+    <ion-input type="text" [(ngModel)]="brand.brandIndus"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Products</ion-label>
+    <ion-input type="text" [(ngModel)]="brand.brandProducts"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Year founded</ion-label>
+    <ion-input type="text" [(ngModel)]="brand.brandFounded"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-textarea rows="20" [(ngModel)]="brand.brandDesc"></ion-textarea>
+  </ion-item>
+  <p class="text-center">
+    <ion-button (click)="add()">New brand</ion-button>
+  </p>
 </ion-content>
+

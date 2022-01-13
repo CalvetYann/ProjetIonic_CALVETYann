@@ -1,7 +1,73 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Star Citizen
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="https://starcitizen.tools/images/6/61/UEEtrans.png" alt="UEE Logo">
+    <ion-card-header>
+      <ion-card-title>What is Star Citizen ?</ion-card-title>
+      <ion-card-subtitle>Star Citizen is a space exploration game created by Chris Roberts. This game allow the players to travel between differents planets and differents solar systems. The story around the game takes place 930 years after today in the UEE (United Empire of Earth).</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      The United Empire of Earth (UEE), colloquially referred to as the Empire by its human population, is a sovereign, democratic interstellar empire spanning across 37 star systems. It was founded in 2546 after the conclusion of the First Human-Tevarin War, which saw the ascension of Ivar Messer to the position of Prime Citizen. Using his newfound political power, he restructured the United Planets of Earth into the UEE, appointing himself Imperator.
+      <br />Until 2792, the Empire was a hereditary monarchy ruled by the Messer Dynasty, which wielded supreme executive and military power over the government. Eventually, the dynasty was overthrown in the Revolution of 2792, restoring democracy to the nation and reforming the government into having the power to impeach the Imperator if all of it acted together. While the Imperator is still the supreme executive office, they are now elected by the populace and bound to a 10-year term.
+      <br />At present, the title of Imperator is held by Laylani Addison.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://cig-galactapedia-prod.s3.amazonaws.com/upload/5c583682-2bed-41be-b8f4-c146377450d2" alt="Xi'An">
+    <ion-card-header>
+      <ion-card-subtitle>But the UEE isn't the only Interstellar Empire in the universe. By traveling in the universe you can go to solar systems where different alien races live (the Banus, Vanduuls or Tevarins are the most known ones) and one of them is the Xi'an empire.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      The Xi'an Empire or SaoXy'an is a polity ruling all of known Xi'an space over 20,000 years. They also have - compared to humanity - a very long tradition of spacefaring.
+      <br />The Xi'an Empire is located along the border of UEE's "eastern systems". It is comprised of at least fourteen systems. The Xi'an government has not disclosed the exact number of systems under their control but it is assumed that they have more territory deeper into space.
+      <br />While not inherently aggressive or expansionist in their nature, the Xi'an history is rife with civil war and power struggles. However over the last 500 years the Xi'an have adopted alternate methods to warfare preferring subtlety and manipulation to overt conflict. Xi'an influence is suspected in the revolution and subsequent overthrow of Imperator Messer XI in 2792.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://starcitizen.tools/images/c/cc/Stanton2DSystem.PNG" alt="Stanton">
+    <ion-card-header>
+      <ion-card-subtitle>The main and only currently playable solar system is the Stanton system. Composed of 4 planets orbiting around Stanton, a main sequence star.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      The Stanton system is a single star system, and one of only two fully colonized systems in the UEE. It is the only system with a green zone reaching four planets, making it suitable for human life. All worlds have undergone limited terraforming and have flora and fauna with divergent ecologies. They are also corporate-owned while belonging to the United Empire of Earth.
+      <br />Shortly after the discovery of the System, all planets were sold by the government to corporations. These four worlds are the only privately-owned worlds in the Empire. Though subject to the UEE's Common Law and standard penal code, the UEE does not fully police the region. Instead, private planetary security teams enforce the local law.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Star Citizen Ships</ion-card-title>
+      <ion-card-subtitle>In Star Citizen you can find a lot of ships to fly around the Stanton System and all the upcomming solar systems.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      You can find some of these ships by clicking on the button below.
+      <ion-button routerLink="/tabs/ships" expand="block" fill="outline">
+        Ships
+        <ion-icon slot="end" name="rocket-outline"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Star Citizen Brands</ion-card-title>
+      <ion-card-subtitle>All of these ships are made by different brands and manufacturers with their own styles and design particularities. For example Origin Jumpworks make luxurious ships and MISC make industrial ones.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      You can find some of these brands by clicking on the button below.
+      <ion-button routerLink="/tabs/brands" expand="block" fill="outline">
+        Brands
+        <ion-icon slot="end" name="planet-outline"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

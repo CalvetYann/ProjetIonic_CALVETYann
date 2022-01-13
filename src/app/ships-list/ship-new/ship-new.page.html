@@ -1,9 +1,59 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>shipNew</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/ships"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add a new ship</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-item>
+    <ion-label>Picture link</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipPicture"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Made by</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.brandName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Role</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipRole"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Size</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipSize"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Length (in m)</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipLength"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Width (in m)</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipWidth"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Height (in m)</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipHeight"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Weight (in kg)</ion-label>
+    <ion-input type="text" [(ngModel)]="ship.shipWeight"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Flyable ?</ion-label>
+    <ion-toggle [(ngModel)]="ship.shipFlightReady"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-textarea rows="20" [(ngModel)]="ship.shipDesc"></ion-textarea>
+  </ion-item>
+  <p class="text-center">
+    <ion-button (click)="add()">New ship</ion-button>
+  </p>
 </ion-content>
+
